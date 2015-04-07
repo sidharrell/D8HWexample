@@ -1,0 +1,6 @@
+name: Hello World Module
+description: Creates a page showing "Hello World".
+package: Custom
+type: module
+version: 1.0
+core: 8.x
