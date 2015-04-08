@@ -41,4 +41,11 @@ class HelloBlock extends BlockBase implements BlockPluginInterface {
 
     return $form;
   }
+
+  /**
+   * {@inheritdoc}
+   */
+  public function blockSubmit($form, FormStateInterface $form_state) {
+    $this->setConfigurationValue('hello_block_settings', $form_state->getValue('hello_block_settings'));
+  }
 }
