@@ -13,7 +13,7 @@ use Drupal\Core\Form\FormStateInterface;
  * admin_label = @Translation("Hello block"),
  * )
  */
-class HelloBlock extends BlockBase implements BlockPluginInterface {
+class HelloBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
@@ -28,7 +28,7 @@ class HelloBlock extends BlockBase implements BlockPluginInterface {
       $name = $this->t('to no one');
     }
     return array(
-      '#markup' => $this->t('Hello @name!', array (
+      '#markup' => $this->t('Hello @name!', array(
           '@name' => $name,
         )
       ),
