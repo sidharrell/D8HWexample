@@ -21,7 +21,7 @@ class HelloBlock extends BlockBase implements BlockPluginInterface {
   public function build() {
     $config = $this->getConfiguration();
 
-    if (isset($config['hello_block_settings']) && !empty($config['hello_block_settings'])) {
+    if (!empty($config['hello_block_settings'])) {
       $name = $config['hello_block_settings'];
     }
     else {
