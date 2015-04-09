@@ -40,13 +40,14 @@ class HelloBlock extends BlockBase {
   public function blockForm($form, FormStateInterface $form_state) {
     $form = parent::blockForm($form, $form_state);
 
+    $default_config = \Drupal::config('hello_world.settings');
     $config = $this->getConfiguration();
 
     $form['hello_block_settings'] = array (
       '#type' => 'textfield',
       '#title' => $this->t('Who'),
       '#description' => $this->t('Who do you want to say hello to?'),
-      '#default_value' => isset($config['hello_block_settings']) ? $config['hello_block_settings'] : ''
+      '#default_value' => isset($config['hello_block_settings']) ? $config['hello_block_settings'] : $default_config->get('hello.name'),
     );
 
     return $form;
